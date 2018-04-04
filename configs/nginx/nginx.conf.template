@@ -110,7 +110,7 @@ http {
 
         listen       80;
 
-        server_name  wiki.${DOMAIN} www.wiki.${DOMAIN};
+        server_name  confluence.${DOMAIN} www.confluence.${DOMAIN};
 
 
 

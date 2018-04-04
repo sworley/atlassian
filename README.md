@@ -2,7 +2,7 @@
 It's Atlassian docker compose file, to run Atlassian products with docker on one single machine.
 
 ```
-jira.example.com   wiki.example.com   bitbucket.example.com
+jira.example.com   confluence.example.com   bitbucket.example.com
        +                   +                    +
        |                   |                    |
        +----------------------------------------+
@@ -27,7 +27,7 @@ jira.example.com   wiki.example.com   bitbucket.example.com
        +------------------------------------------+
        |                   |                      |
        v                   v                      v
-   [db:jira]           [db:wiki]          [db:bitbucket]
+   [db:jira]           [db:confluence]          [db:bitbucket]
 ```
 
 
@@ -83,7 +83,7 @@ How to use:
     ``` 
     $ vim /etc/hosts
         127.0.0.1 jira.example.com www.jira.example.com
-        127.0.0.1 wiki.example.com www.wiki.example.com
+        127.0.0.1 confluence.example.com www.confluence.example.com
         127.0.0.1 bitbucket.example.com www.bitbucket.example.com
     ```
 Replace `127.0.0.1` with IP of host that `docker-compose` command run on it.
@@ -94,7 +94,7 @@ Replace `127.0.0.1` with IP of host that `docker-compose` command run on it.
     ```
     $ docker exec -it atlassian_database_1  psql -U postgres
        postgres=# CREATE DATABASE jira;
-       postgres=# CREATE DATABASE wiki;
+       postgres=# CREATE DATABASE confluence;
        postgres=# CREATE DATABASE bitbucket;
        postgres=# \l
        postgres-# \q
@@ -105,7 +105,7 @@ Replace `127.0.0.1` with IP of host that `docker-compose` command run on it.
 
         ```
         http://jira.example.com
-        http://wiki.example.com
+        http://confluence.example.com
         http://bitbucket.example.com
         ```
         

@@ -1,31 +1,28 @@
 version: '3'
 services:
   jira:
-    image: cptactionhank/atlassian-jira:7.6.0
+    image: cptactionhank/atlassian-jira:latest
     restart: always
     links:
       - database
     volumes:
       - jira-data:/var/atlassian/jira
-
   confluence:
-    image: cptactionhank/atlassian-confluence:6.7.0
+    image: cptactionhank/atlassian-confluence:latest
     restart: always
     links:
       - database
     volumes:
       - confluence-data:/var/atlassian/confluence
-
   bitbucket:
-    image: atlassian/bitbucket-server:5.7
+    image: atlassian/bitbucket-server:latest
     restart: always
     links:
       - database
     volumes:
       - bitbucket-data:/var/atlassian/application-data/bitbucket
-
   database:
-    image: postgres:9.6.6
+    image: postgres:9.6.8
     restart: always
     volumes:
       - database-data:/var/lib/postgresql/data
