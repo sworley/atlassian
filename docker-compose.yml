@@ -30,7 +30,7 @@ services:
     image: nginx
     restart: always
     ports:
-      - "8888:8888"
+      - "80:80"
     links:
       - jira
       - confluence
