@@ -7,6 +7,7 @@ services:
       - database
     volumes:
       - jira-data:/var/atlassian/jira
+      - atlassian-home:/opt/atlassian
   confluence:
     image: cptactionhank/atlassian-confluence:latest
     restart: always
@@ -14,6 +15,7 @@ services:
       - database
     volumes:
       - confluence-data:/var/atlassian/confluence
+      - atlassian-home:/opt/atlassian
   bitbucket:
     image: atlassian/bitbucket-server:latest
     restart: always
@@ -21,6 +23,7 @@ services:
       - database
     volumes:
       - bitbucket-data:/var/atlassian/application-data/bitbucket
+      - atlassian-home:/opt/atlassian
   database:
     image: postgres:9.6.8
     restart: always
@@ -41,6 +44,7 @@ services:
     environment:
     - DOMAIN
 volumes:
+  atlassian-home:
   jira-data:
   confluence-data:
   bitbucket-data:
